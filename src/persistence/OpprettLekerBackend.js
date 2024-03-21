@@ -88,6 +88,7 @@ export async function updateAverageScore(gameID, score, removed){
 
     if (snapshot.exists()) {
         const scoreGame = Object.values(snapshot.val())[0];
+        // Fiks henting a averageScore
 
         const oldAverageScore = scoreGame.averageScore;
         // console.log("Gammel score: " + scoreGame);
@@ -176,7 +177,7 @@ export async function deleteGame(gameID){
     await removeQueuedGame(gameID);
 
     // REVIEWS
-    await deleteReviewByGameID(gameID);
+    //await deleteReviewByGameID(gameID);
 
     //Does not throw error if gameID doesn't exist
     remove(gameRef);

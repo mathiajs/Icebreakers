@@ -145,7 +145,7 @@ export async function reportReview(reviewID){
 export async function deleteReviewByGameID(gameID){
     const reviewRef = ref(database, "gameReviews/");
 
-    const reviewQuery = query(reviewRef, orderByChild(gameID), equalTo(gameID));
+    const reviewQuery = query(reviewRef, orderByChild('gameID'), equalTo(gameID));
     const snapshot = await get(reviewQuery);
 
     if (snapshot.exists()) {
